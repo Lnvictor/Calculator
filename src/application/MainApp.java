@@ -1,9 +1,17 @@
 package application;
 
+import jdk.jfr.Event;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.security.Key;
 import java.util.*;
 import java.util.List;
+
+import static java.awt.event.KeyEvent.*;
 
 /**
  * Graphical Interface of Math Calculator
@@ -13,13 +21,16 @@ import java.util.List;
  */
 public class MainApp extends JFrame{
     private JTextArea tArea;
-
+    private List<JButton> operationButtons;
+    private List<JButton> numberButtons;
     public MainApp(){
         setTitle("MyCalculator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(250,200);
 
-        List<JButton> operationButtons = new ArrayList<>();
+        operationButtons = new ArrayList<>();
+        numberButtons = new ArrayList<>();
+
         List<JButton> numberButtons = new ArrayList<>();
 
         tArea = new JTextArea(2,20);
@@ -81,6 +92,12 @@ public class MainApp extends JFrame{
      */
     public void setResult(double result){
         this.tArea.setText(String.valueOf(result));
+    }
+
+    public void setkKeyEqualPressedMock(){
+        this.operationButtons.get(4).doClick();
+        MyMouseListener tester = new MyMouseListener(this);
+        this.setResult(tester.returnResultOfExpression(this.getExpression()));
     }
 
     public static void main(String[] args) {

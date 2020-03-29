@@ -20,8 +20,12 @@ public class MyMouseListener implements MouseListener {
     private JButton button;
     private JLabel resultOperation;
 
-    public MyMouseListener( MainApp myFrame, JButton button){
+    public MyMouseListener(MainApp myFrame){
         this.myFrame = myFrame;
+    }
+
+    public MyMouseListener( MainApp myFrame, JButton button){
+        this(myFrame);
         this.button = button;
     }
 
