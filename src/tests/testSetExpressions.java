@@ -6,6 +6,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ *
+ * @author Victor Pereira
+ * @version 1.0
+ */
 public class testSetExpressions {
     private MainApp mainTest;
 
