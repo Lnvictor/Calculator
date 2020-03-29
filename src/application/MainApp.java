@@ -94,12 +94,6 @@ public class MainApp extends JFrame{
         this.tArea.setText(String.valueOf(result));
     }
 
-    public void setkKeyEqualPressedMock(){
-        this.operationButtons.get(4).doClick();
-        MyMouseListener tester = new MyMouseListener(this);
-        this.setResult(tester.returnResultOfExpression(this.getExpression()));
-    }
-
     public static void main(String[] args) {
         MainApp app = new MainApp();
         app.setVisible(true);
